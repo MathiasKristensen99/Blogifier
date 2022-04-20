@@ -22,7 +22,8 @@ pipeline {
         }
         stage("Execute UI tests") {
             steps {
-                echo "Find a way to let Jenkins execute your TestCafé tests here"
+                docker run -v /tests/Blogifier.Tests/UI:/tests -it testcafe/testcafe firefox /tests/TestCafe.js
+
             }
             post {
                 always {
