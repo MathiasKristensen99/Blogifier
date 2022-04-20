@@ -22,7 +22,7 @@ pipeline {
         }
         stage("Execute UI tests") {
             steps {
-                sh "docker run -v /root/Blogifier/tests/Blogifier.Tests/UI/:/tests -t testcafe/testcafe firefox /tests/TestCafe.js"
+                sh "docker run -v /root/Blogifier/tests/Blogifier.Tests/UI:/tests -t testcafe/testcafe firefox /tests/TestCafe.js"
 
             }
             post {
