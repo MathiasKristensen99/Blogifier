@@ -14,7 +14,7 @@ pipeline {
         }
         stage("Performance testing") {
             steps {
-                sh 'k6 run testcafe/performance-test.js'
+                sh 'k6 run performancetest/performance-test.js'
             }
         }
         stage("Reset test environment") {
