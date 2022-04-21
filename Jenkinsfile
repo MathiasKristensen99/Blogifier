@@ -12,6 +12,11 @@ pipeline {
                 }
             }
         }
+        stage("Performance testing") {
+            steps {
+                sh 'k6 run testcafe/performance-test.js'
+            }
+        }
         stage("Reset test environment") {
             steps {
                 sh "docker-compose down"
