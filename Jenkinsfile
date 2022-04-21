@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    triggers { // https://www.jenkins.io/doc/book/pipeline/syntax/#triggers
+        cron("0 0 * * *") // https://en.wikipedia.org/wiki/Cron + https://crontab.guru/ 
+    }
     environment {
         TIMESTAMP = sh(script: "date +%s", returnStdout: true).trim()
         SCREENSHOT_PATH = "screenshots/${TIMESTAMP}"
